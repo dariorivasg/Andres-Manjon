@@ -1,0 +1,32 @@
+------------------------------
+Tamaño portadas
+300x450 px (tamaño contenedor 200x240)
+(tamaño contenedor 110x150)
+
+------------------------------
+Declaradas variables de Categorias (porque no estaba en la bd)
+Rojo (Valores)
+Rosa (Emociones)
+Morado (Igualdad)
+Amarillo (Inglés)
+Marron (Colecciones)
+Blanco (Cómics)
+Negro (Música)
+Verde: infantil y 1º ciclo (1 y 2 primaria)
+Naranja: 2º y 3º ciclo
+Azul (Naturaleza)
+
+-----------------------------------------
+Fotos para portadas SOLO deben ser en .jpg (no jpeg, ni png ni otros formatos)
+------------------------------------------
+ISBN debe ser metido al añadir libro sin (-)//Capar eso
+-----------------------------------------
+Falta hacer: 
+que entre con usuario y carnet
+asegurarse de que no coincidan nombre de acceso
+------------------------------------------
+Busqueda de libros: se come todo (mayusc, minusc, tildes) MENOS COLORES
+----------------------
+SI PIDE ALUMNO MAYOR LIBRO: SE LLENAN SUS DATOS DEL PRESTAMO SOLO, NO SE PUEDEN MODIFICAR LOS DATOS
+SI ES PROFE O ADMIN SE LLENAN SOLO PERO SE PUEDEN EDITAR LOS DATOS
+----------------------

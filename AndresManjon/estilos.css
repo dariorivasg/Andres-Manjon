@@ -1,0 +1,1220 @@
+/* estilos.css */
+/* =========================================
+
+   1. VARIABLES Y CONFIGURACIÓN BASE
+
+   ========================================= */
+
+:root {
+    --azul: #1a4b8c;
+    --azul-hover: #123666;
+    --azul-muy-suave: #f0f4f8;
+    --verde-infantil: #2d8a37;
+    --fondo: #f8fafc;
+    --blanco: #ffffff;
+    --texto-oscuro: #1e293b;
+    --texto-gris: #64748b;
+    --borde: #e2e8f0;
+    --radio-botones: 15px;
+    --radio-tarjetas: 10px;
+    --radio-inputs: 12px;
+    --nav:#f0f4f8;
+
+    --texto-nav-noact: #1e293b;
+    --fondo-nav: #1e293b;        /* El azul oscuro de tu fondo */
+    --boton-reposo: #f1f5f9;     /* Gris azulado muy claro */
+    --boton-hover: #cbd5e1;      /* Azul grisáceo medio */
+    --boton-activo: #ffffff;     /* Blanco puro */
+    --texto-oscuro: #0f172a;     /* Azul casi negro para el texto */
+    
+    /* Colores de Bordes */
+    --borde-reposo: #e2e8f0;     /* Sutil, casi desaparece */
+    --borde-hover: #94a3b8;      /* Define más el botón al pasar el mouse */
+    --borde-activo: #ffffff;     /* Desaparece al fundirse con el blanco */
+}
+
+body {
+    background-color: var(--fondo);
+    /* Patrón sutil de puntos para un toque moderno */
+    background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--texto-oscuro);
+}
+
+/* =========================================
+
+   2. ESTILOS DEL LOGIN
+
+   ========================================= */
+
+.logo-colegio {
+    width: 100px;           /* Tamaño del logo */
+    height: 100px;          /* Debe ser igual al ancho */
+    border-radius: 50%;     /* Lo hace circular */
+    object-fit: cover;      /* Evita que la imagen se deforme */
+    background-color: white; 
+    margin: -90px auto 20px; /* Sube el logo hacia afuera (-90px) y centra (auto) */
+    display: block;         /* Permite que margin: auto funcione */
+    padding: 5px;           /* Espacio blanco alrededor del logo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra suave para dar relieve */
+    border: 3px solid var(--azul); /* Borde con el color del cole */
+}
+
+.login {
+    background-color: var(--blanco);
+    margin: 85px auto;
+    color: #333;
+    text-align: center;
+    width: 25%;
+    padding: 40px;
+    border-radius: var(--radio-tarjetas);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--azul);
+}
+
+.titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--azul);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.subtitulo {
+    font-size: 0.95rem;
+    color: var(--texto-gris);
+    margin-bottom: 30px;
+
+}
+
+.grupo-formulario {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.campo {
+    border: 1.5px solid var(--borde);
+    outline: none;
+    border-radius: var(--radio-botones);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    font-size: 1rem;
+    background-color: var(--fondo);
+    transition: all 0.2s ease;
+}
+
+.campo:focus {
+    border-color: var(--azul);
+    background-color: var(--blanco);
+    box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.1);
+}
+
+.boton-login {
+    width: 100%;
+    background-color: var(--azul);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: var(--radio-botones);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s, transform 0.1s;
+}
+
+.boton-login:hover {
+    background-color: var(--azul-hover);
+}
+
+/* --- ESTILOS PARA ACCESO RÁPIDO INFANTIL --- */
+
+.seccion-infantil {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--borde);
+}
+
+.pregunta-infantil {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-gris);
+    margin-bottom: 15px;
+}
+
+.boton-catalogo-verde {
+    display: inline-block;
+    background-color: var(--verde-infantil);
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    border-radius: var(--radio-botones);
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.boton-catalogo-verde:hover {
+    opacity: 0.9;
+}
+
+.icono-contenedor {
+    background-color: #eeecff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+}
+
+.icono-contenedor svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--azul);
+}
+
+/* Mensajes de error del PHP */
+.texto-error-login {
+    color: #b91c1c;
+    background-color: #fef2f2;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    border: 1px solid #fee2e2;
+}
+
+/* --- FOOTER DEL LOGIN --- */
+
+.footer-login {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    color: var(--texto-gris);
+    border-top: 1px solid #e5e7eb; /* Línea sutil superior */
+    font-size: 0.9rem;
+}
+
+.footer-login p {
+    font-size: 0.8rem;
+    color: var(--texto-gris);
+    margin-bottom: 8px;
+}
+
+.enlaces-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.enlaces-footer a {
+    font-size: 0.75rem;
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.enlaces-footer a:hover {
+    text-decoration: underline;
+    color: var(--texto-oscuro);
+}
+
+.separador-punto {
+    font-size: 0.8rem;
+    color: var(--texto-oscuro);
+}
+
+/* =========================================
+
+   3. CABECERA Y NAVEGACIÓN PRINCIPAL
+
+   ========================================= */
+.cabecera-principal {
+    display: flex;
+    align-items: center; /* Centra verticalmente todos los elementos */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--azul-hover); /* #222222 El tono oscuro del colegio o var(--azul-hover) */
+    color: #F8FAFC;
+}
+
+.usuario-identificado {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1; /* Esto hace que ocupe espacio a la izquierda */
+}
+
+.usuario-identificado h1 { 
+    margin: 0; 
+    font-size: 1.3rem; 
+}
+
+.usuario-identificado p { 
+    margin: 0; 
+    color: var(--texto-gris); 
+    Color: #94A3B8;
+}
+
+.boton-salir {
+    background: #c66363;
+    color: white;
+    border: 1px solid transparent; /* Para que mida lo mismo que los otros si tienen borde */
+    
+    /* IGUALAR ESTOS VALORES CON .enlace-nav */
+    padding: 10px 22px;           /* Ajustado de 8px 18px a 10px 22px */
+    font-weight: 700;             /* Un poco más de peso para que destaque */
+    font-size: 1rem;              /* Asegúrate que el tamaño de fuente sea igual */
+    
+    border-radius: var(--radio-botones);
+    cursor: pointer;
+    margin-left: auto;            /* Empuja el botón al extremo derecho si usas flexbox */
+    transition: all 0.3s ease;
+    display: inline-block;        /* Para que respete bien el padding */
+}
+
+/* Efecto hover para que no sea estático */
+.boton-salir:hover {
+    background: #b05555;          /* Un rojo un poco más oscuro */
+    transform: scale(1.05);       /* Crece un poquito al pasar el mouse */
+}
+
+/* Navegación al centro-derecha */
+.navegacion-principal {
+    flex: 2; /* Toma más espacio para poder empujar el menú */
+}
+
+.navegacion-principal ul {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px 0;
+    transition: background 0.2s ease;
+}
+
+.enlace-nav {
+    text-decoration: none;
+    color: var(--texto-nav-noact);
+    background-color: var(--boton-reposo);
+    padding: 10px 22px;
+    border-radius: var(--radio-botones);
+    border: 2px solid transparent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* Borde en estado normal */
+    border: 1px solid var(--borde-reposo);
+    
+}
+
+.enlace-nav.activo {
+    background-color: var(--boton-activo);
+    color: #000000;
+    border-color: var(--borde-activo);
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto al pasar el ratón por los otros */
+.enlace-nav:hover:not(.activo) {
+    background-color: var(--boton-hover);
+    color: #0f172a;
+    border-color: var(--borde-hover);
+    transform: translateY(-1px); /* Pequeño salto hacia arriba */
+}
+
+.lista-colores li {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Esto separará la bolita del texto */
+    margin-bottom: 10px;
+}
+
+.lista-ranking{
+    gap: 20px;
+    background-color: var(--azul-muy-suave);
+    border-color: var(--borde-hover);
+    border-radius: var(--radio-tarjetas);
+}
+
+
+.lista-ranking li {
+    max-width: 1200px; 
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gris-frio);
+}
+
+/* =========================================
+
+   4. PANEL DE CONTROL Y HERRAMIENTAS
+
+   ========================================= */
+
+.contenedor-principal {
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: auto; 
+}
+
+.barra-herramientas {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.buscador { flex-grow: 1; }
+
+.buscador input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: var(--radio-inputs);
+    outline: none;
+}
+
+.boton-primario {
+    background-color: var(--azul);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radio-inputs);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.boton-primario:hover {
+    background-color: var(--azul-hover);
+}
+
+.boton-primario-nuevo {
+    background-color: #10b981;
+    color: var(--blanco);
+    margin-left: 15px;
+    padding: 12px 24px;
+    border-radius: var(--radio-inputs);
+    text-decoration: none;
+    font-weight: bold;
+}
+.boton-primario-nuevo:hover {
+    background-color: #059669;
+}
+
+/* --- ESTILOS DE LOS AVATARES (PUNTOS DE COLOR) --- */
+
+/* Asegura el tamaño y forma circular */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+/* Admin: Azul Oscuro */
+.avatar.azul-oscuro { background-color: #1e3a8a !important; }
+
+/* Profesor: Azul Claro */
+.avatar.azul-claro { background-color: #3b82f6 !important; }
+
+/* Infantil / 1º Ciclo: Verde */
+.avatar.verde { background-color: #22c55e !important; }
+
+/* 2º y 3º Ciclo: Naranja */
+.avatar.naranja { background-color: #f97316 !important; }
+
+/* Fallback / Otros: Amarillo */
+.avatar.amarillo { background-color: #eab308 !important; }
+
+/* Estilo para las etiquetas de rol (Estudiante / Admin) */
+.est-pequeno { background-color: #fef9c3; color: #854d0e; } /* Amarillo suave */
+.est-mayor { background-color: #dbeafe; color: #1e40af; }   /* Azul suave */
+
+/* =========================================
+
+   5. FICHAS DE LIBROS (TARJETAS)
+
+   ========================================= */
+
+.separador-categoria {
+    border-left: 8px solid #cbd5e1; /* Color gris por defecto si no hay clase */
+    background: #e5e7eb;
+    padding: 12px 20px;
+    margin: 40px 0 20px 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: var(--texto-oscuro);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Añade estas reglas para cubrir todos tus colores: */
+.separador-categoria.border-verde { border-left-color: #22c55e; }
+.separador-categoria.border-naranja { border-left-color: #f97316; }
+.separador-categoria.border-rojo { border-left-color: #ef4444; }
+.separador-categoria.border-rosa { border-left-color: #ec4899; }
+.separador-categoria.border-morado { border-left-color: #a855f7; }
+.separador-categoria.border-amarillo { border-left-color: #eab308; }
+.separador-categoria.border-marron { border-left-color: #78350f; }
+.separador-categoria.border-blanco { border-left-color: #ffffff; }
+.separador-categoria.border-negro { border-left-color: #1f2937; }
+.separador-categoria.border-azul { border-left-color: #3b82f6; }
+
+
+.ficha-libro {
+    background: var(--blanco);
+    border-radius: var(--radio-tarjetas);
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.cuerpo-superior {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+}
+
+.portada img {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.info-principal { flex-grow: 1; }
+
+.info-principal h2 { margin: 0; font-size: 1.4rem; }
+
+.autor { color: var(--texto-gris); margin: 5px 0; }
+
+.etiqueta-color {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.texto-categoria {
+    color: var(--texto-gris);
+    font-style: italic;
+}
+
+/* Códigos ISBN y Barras */
+
+.codigos-libro p {
+    margin: 4px 0;
+    font-size: 0.85rem;
+    color: var(--texto-gris);
+}
+
+/* PUNTOS DE COLOR */
+.punto { width: 14px; height: 14px; border-radius: 50%; display: inline-block; border: 1px solid rgba(0,0,0,0.1); }
+.punto.rojo { background-color: #ef4444; }
+.punto.rosa { background-color: #ec4899; }
+.punto.morado { background-color: #a855f7; }
+.punto.amarillo { background-color: #eab308; }
+.punto.marron { background-color: #78350f; }
+.punto.blanco { background-color: #ffffff; }
+.punto.negro { background-color: #1f2937; }
+.punto.verde { background-color: #22c55e; }
+.punto.naranja { background-color: #f97316; }
+.punto.azul { background-color: #3b82f6; }
+
+.botones-accion { display: flex; flex-direction: column; gap: 10px; }
+.btn-icon { background: #f3f4f6; border: none; padding: 8px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.btn-icon:hover { background: #e5e7eb; }
+
+.separador { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
+
+/* --- AJUSTES PARA LOGRAR EL DISEÑO DE LA FOTO 1 --- */
+
+.cabecera-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Botones Editar/Borrar arriba a la derecha */
+.acciones-ficha {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btn-mini-accion {
+    background: #f1f5f9;
+    border: none;
+    padding: 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Alineación de ejemplares y botón "+" */
+.fila-ejemplares {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-anadir-plus {
+    background: #f3e8ff;
+    color: #7e22ce;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Cuadro de ejemplar con el estilo exacto de la foto */
+.cuadro-ejemplar {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    min-width: 150px;
+}
+
+.id-ejemplar { color: #166534; font-weight: bold; }
+.ubicacion-ejemplar { font-size: 0.7rem; color: #15803d; display: block; }
+
+/* Ajuste de la portada */
+.portada img {
+    width: 160px; /* Tamaño más equilibrado como en la foto */
+    height: 180px;
+    border-radius: 12px;
+}
+
+/* =========================================
+
+   6. SECCIÓN DE EJEMPLARES (CUADROS VERDES)
+
+   ========================================= */
+
+.seccion-ejemplares {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titulo-ejemplares {
+    font-size: 0.95rem;
+    color: var(--texto-oscuro);
+    font-weight: 600;
+}
+
+.grid-ejemplares {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cuadro-ejemplar {
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-width: 160px;
+}
+
+.id-ejemplar { font-weight: bold; color: #166534; }
+
+.ubicacion-ejemplar { font-size: 0.75rem; color: #15803d; text-transform: uppercase; }
+
+/* Estados de disponibilidad */
+
+.estado-disponible { font-size: 0.85rem; color: #16a34a; font-weight: 700; margin-top: 4px; }
+.estado-prestado { font-size: 0.85rem; color: #d97706; font-weight: 700; margin-top: 4px; }
+.btn-anadir-ejemplar {
+    background-color: var(--morado-claro);
+    color: #7e22ce;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-left: auto;
+    transition: 0.2s;
+}
+
+.btn-anadir-ejemplar:hover { background-color: #e9d5ff; }
+
+/* --- ESTILOS PARA LOS DESPLEGABLES DE USUARIOS --- */
+.desplegable-grupo {
+    margin-bottom: 25px;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.desplegable-grupo summary {
+    padding: 18px 25px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Quita la flecha nativa */
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s ease;
+}
+
+.desplegable-grupo summary:hover {
+    background: #f1f5f9;
+}
+
+.desplegable-grupo summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Badge circular para contar usuarios */
+.contador-badge {
+    background: #3182ce; /* Azul estándar */
+    color: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Contenedor interno para las tarjetas de usuario */
+.contenido-desplegable {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 25px;
+    background: #ffffff;
+}
+
+/* Ajuste para cuando el desplegable está cerrado */
+.desplegable-grupo:not([open]) summary {
+    border-bottom: none;
+}
+
+/* Diferenciación de secciones */
+.titulo-seccion {
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #3b82f6;
+    color: #1e293b;
+}
+
+.separador-secciones {
+    margin: 4rem 0;
+    border: 0;
+    border-top: 1px dashed #ccc;
+}
+
+/* Estilo para la tabla de historial */
+.tabla-historial {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tabla-historial th, .tabla-historial td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+
+.tabla-historial th {
+    background-color: #f8fafc;
+    color: #64748b;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.etiqueta-devuelto {
+    background: #dcfce7;
+    color: #166534;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.texto-categoria {
+    color: #71717a; /* Un gris elegante */
+    font-weight: 400;
+    font-style: italic;
+}
+
+.detalles-prestamo p {
+    margin: 6px 0; /* Espaciado similar al de tu imagen */
+    color: #444;
+}
+
+/* --- CONTENEDORES Y ESTRUCTURA --- */
+.contenedor-prestamos { 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: auto; 
+}
+
+.titulo-seccion { 
+    margin: 30px 0 15px; 
+    padding-bottom: 10px; 
+    border-bottom: 3px solid #3b82f6; 
+    color: #1e293b; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.contador-prestamos {
+    font-size: 0.9rem;
+    background: #3b82f6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* --- GRID Y TARJETAS --- */
+.grid-prestamos { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); 
+    gap: 20px; 
+}
+
+.tarjeta-prestamo { 
+    background: #fff; 
+    border-radius: 12px; 
+    border: 1px solid #e2e8f0; 
+    overflow: hidden; 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.tarjeta-entidad-usuarios {
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.tarjeta-entidad {
+    background-color: #dbeafe;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.contenido-principal { 
+    display: flex; 
+    padding: 20px; 
+    gap: 20px; 
+}
+
+.portada-prestamo { 
+    width: 110px; 
+    height: 160px; 
+    object-fit: cover; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.detalles-prestamo { flex: 1; }
+.detalles-prestamo h3 { margin: 0 0 8px 0; color: #1e293b; font-size: 1.2rem; }
+.detalles-prestamo p { margin: 5px 0; font-size: 0.95rem; color: #475569; }
+
+/* --- COLORES Y PUNTOS --- */
+.indicador-color-foto { display: flex; align-items: center; gap: 8px; margin: 10px 0; }
+.punto { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+.texto-categoria { color: #64748b; font-size: 0.9rem; font-style: italic; }
+
+/* Colores específicos de la biblioteca */
+.rojo { background-color: #ef4444; }
+.rosa { background-color: #ec4899; }
+.morado { background-color: #a855f7; }
+.amarillo { background-color: #eab308; }
+.marron { background-color: #78350f; }
+.blanco { background-color: #f8fafc; border: 1px solid #cbd5e1; }
+.negro { background-color: #1e293b; }
+.verde { background-color: #22c55e; }
+.naranja { background-color: #f97316; }
+.azul { background-color: #3b82f6; }
+
+/* --- BOTONES Y ACCIONES --- */
+.acciones-prestamo { 
+    padding: 15px; 
+    text-align: right; 
+    background: #f8fafc; 
+    border-top: 1px solid #edf2f7; 
+}
+
+.boton-devolver { 
+    background-color: #3b82f6; 
+    color: white; 
+    border: none; 
+    padding: 10px 30px; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background 0.2s; 
+}
+
+.boton-devolver:hover { background-color: #2563eb; }
+
+/* --- TABLA HISTORIAL --- */
+.seccion-historial { margin-top: 60px; }
+.tabla-responsiva { overflow-x: auto; }
+.tabla-historial { 
+    width: 100%; 
+    border-collapse: collapse; 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden; 
+}
+
+.tabla-historial th { 
+    background: #f1f5f9; 
+    padding: 15px; 
+    text-align: left; 
+    font-size: 0.8rem; 
+    color: #64748b; 
+    text-transform: uppercase; 
+}
+
+.tabla-historial td { padding: 15px; border-bottom: 1px solid #f1f5f9; }
+.tipo-usuario-label { color: #64748b; font-size: 0.7rem; font-weight: bold; }
+
+/* --- ESTADOS Y ALERTAS --- */
+.retrasado { border: 2px solid #ef4444; background: #fff1f2; }
+.texto-alerta-rojo { color: #ef4444; font-weight: bold; }
+.badge-devuelto { 
+    background: #dcfce7; 
+    color: #166534; 
+    padding: 4px 12px; 
+    border-radius: 15px; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+}
+
+.alerta-exito-global {
+    background: #dcfce7;
+    color: #166534;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #bbf7d0;
+    font-weight: bold;
+}
+
+.sin-datos { text-align: center; padding: 40px; color: #94a3b8; grid-column: 1 / -1; }
+
+.btn-solicitar-prestamo {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f3e8ff; /* Color lila suave similar al de la imagen */
+    color: #6b21a8;           /* Texto morado oscuro */
+    text-decoration: none;
+    border-radius: 20px;      /* Bordes muy redondeados */
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-solicitar-prestamo:hover {
+    background-color: #e9d5ff;
+    border-color: #d8b4fe;
+    transform: translateY(-1px);
+}
+
+/* =========================================
+
+   7. PAGINACIÓN Y RESPONSIVE
+
+   ========================================= */
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 40px 0;
+}
+
+.btn-pag {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    background: var(--blanco);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.btn-pag.activo {
+    background: var(--azul);
+    color: white;
+    border-color: var(--azul);
+}
+
+@media (max-width: 600px) {
+    .cuerpo-superior { flex-direction: column; align-items: center; text-align: center; }
+    .botones-accion { flex-direction: row; justify-content: center; }
+    .navegacion-principal ul { flex-wrap: wrap; }
+    .btn-anadir-ejemplar { margin-left: 0; width: 100%; }
+}
+/* =========================================
+
+   8. VISTA ESTUDIANTE MAYOR
+
+   ========================================= */
+
+.body-estudiante-mayor {
+    background-color: #f0f7ff;
+}
+
+header {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between; /* Para separar el título de los botones */
+    align-items: center;
+    padding: 10px 20px; /* Espaciado interno para que el contenido no pegue al borde */
+    box-sizing: border-box; /* Importante para que el padding no sume ancho extra */
+}
+
+.header-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.info-user { display: flex; align-items: center; gap: 15px; }
+.avatar { font-size: 45px; color: var(--azul); }
+.nombre-user { display: block; font-weight: bold; font-size: 1.2rem; }
+.detalle-user { color: var(--texto-gris); font-size: 0.9rem; }
+
+.btn-mis-libros {
+    background: #ffe4e6;
+    color: #e11d48;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tabs-navegacion {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background: #e5e7eb;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: var(--azul);
+    color: white;
+}
+
+.barra-busqueda {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.input-con-icono {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f9fafb;
+    padding: 0 15px;
+    border-radius: 10px;
+}
+
+.input-con-icono input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    padding: 12px 0;
+}
+
+.grid-mayor {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.tarjeta-libro-mayor {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+    padding-bottom: 15px;
+    border: 3px solid #eee; /* Borde como en la foto */
+}
+
+.tarjeta-libro-mayor:hover { transform: translateY(-5px); }
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.info-libro-mayor h3 { font-size: 1rem; margin: 10px 0 5px; }
+.autor-mayor { color: var(--texto-gris); font-size: 0.85rem; }
+.disponibilidad { color: #22c55e; font-size: 0.8rem; display: block; margin: 10px 0; }
+
+.btn-pedir-mayor {
+    background: #f59e0b; /* Color naranja de la foto */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Botón Mis Libros (Azul claro/suave para diferenciarlo) */
+.btn-mis-libros-azul {
+    background-color: var(--morado-claro); /* O usa un azul muy clarito */
+    color: var(--azul);
+    border: 1px solid var(--azul);
+    padding: 10px 15px;
+    border-radius: var(--radio-botones);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Botón Salir (Ahora AZUL como los demás) */
+.btn-salir-azul {
+    background-color: var(--azul);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: var(--radio-botones);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s;
+}
+
+.btn-salir-azul:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* Ajuste para que las fichas vayan hacia abajo en el grid */
+.grid-libros {
+    display: flex;
+    flex-direction: column; /* Libros uno debajo de otro */
+    gap: 20px;
+    max-width: 900px;       /* Centra y limita el ancho para que no sea infinito */
+    margin: 0 auto;
+}
+
+.botones-accion {
+    margin-left: auto;      /* Empuja el botón "Pedir Libro" al extremo derecho */
+}
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+    border-radius: var(--radio-botones);
+    color: var(--azul-muy-suave);
+}
+
+.tarjeta-mini {
+    background: var(--azul);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--sombra);
+}
+
+.icono-stats {
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--gris-frio);
+}

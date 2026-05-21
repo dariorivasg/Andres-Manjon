@@ -1,0 +1,20 @@
+Admin	
+Usuario: Ana García	
+Carnet: 26-ADM-AG	
+Contraseña: AnaG26	
+
+Profesor	
+Usuario: Elena Cano	
+Carnet: ElenaC26	
+Contraseña: 26-PRO-EC
+
+Alumno MAYOR
+Usuario: Natalia Crespo	
+Carnet: NataC26
+Contraseña: 
+
+Alumno INFANTIL
+Usuario: Hugo Martínez	
+Carnet: HugoM26	
+Contraseña: 26-INF-HM
+---------------------------------------------

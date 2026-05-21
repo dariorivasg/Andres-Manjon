@@ -1,0 +1,432 @@
+/* estilos2.css */
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    --primario: #1a4b8c;
+    --primario-hover: #123666;
+    --fondo: #f0f4f8;
+    --texto: #1e293b;
+    --texto-suave: #64748b;
+    --texto-oscuro: #1e293b;
+    --blanco: #ffffff;
+    --borde: #e2e8f0;
+    --gris-frio: #f1f5f9;
+    --sombra: 0 4px 6px rgba(0,0,0,0.02);
+    --sombra-fuerte: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    background-color: var(--fondo);
+    background-image: radial-gradient(#cbd5e1 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--texto);
+}
+
+/* --- FOOTER DEL LOGIN --- */
+
+.footer-login {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    color: var(--texto-suave);
+    border-top: 1px solid #e5e7eb; /* Línea sutil superior */
+    font-size: 0.9rem;
+}
+
+.footer-login p {
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    margin-bottom: 8px;
+}
+
+.enlaces-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.enlaces-footer a {
+    font-size: 0.75rem;
+    color: var(--primario);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.enlaces-footer a:hover {
+    text-decoration: underline;
+    color: var(--texto-oscuro);
+}
+
+.separador-punto {
+    font-size: 0.8rem;
+    color: var(--texto-oscuro);
+}
+
+/* =========================================
+   2. ESTRUCTURA Y LAYOUT (CONTENEDORES)
+   ========================================= */
+.contenedor-principal2 {
+    width: 100%; /* Asegura que ocupe todo el ancho para que el "center" funcione */
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Esto centra los hijos horizontalmente */
+}
+
+.contenedor-principal-prestamos {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    min-height: 100vh;       /* Usa el 100% de la altura de la pantalla */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contenedor-principal-prestamos {
+    margin-top: -50px;
+}
+
+.cuadricula-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.barra-navegacion,
+.barra-herramientas2 {
+    display: flex;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+
+
+/* =========================================
+   3. FORMULARIOS Y BOTONES
+   ========================================= */
+.tarjeta-formulario {
+    background: var(--blanco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-fuerte);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; /* Refuerza el centrado */
+}
+
+.tarjeta-formulario h2 {
+    margin: 0 0 1.5rem 0;
+    color: var(--texto-suave);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+fieldset { border: none; padding: 0; margin-bottom: 1.2rem; }
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--texto-suave);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primario);
+    box-shadow: 0 0 0 2px rgba(26, 75, 140, 0.1);
+}
+
+/* Botones */
+.acciones { display: flex; gap: 12px; margin-top: 2rem; }
+
+.btn-guardar, .btn-primario, .boton-primario {
+    background-color: var(--primario);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    margin-left: 10px;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+.btn-guardar { flex-grow: 4; }
+.btn-cancelar {
+    background-color: var(--gris-frio);
+    color: var(--texto-suave);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.boton-primario:hover {
+    background-color: var(--primario-hover);
+}
+.btn-guardar:hover, .btn-primario:hover {
+    background-color: var(--primario-hover);
+}
+
+/* =========================================
+   4. COMPONENTES (TARJETAS Y BUSCADOR)
+   ========================================= */
+.buscador {
+    display: flex;
+    flex: 0 1 800px;
+    gap: 10px;
+}
+
+.buscador input[type="search"], 
+.buscador input[type="text"] {
+    max-width: 1000px;
+    background-color: var(--blanco);
+    border-radius: 10px;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.busqueda_usuario {
+    display: flex;
+    justify-content: center;
+}
+
+.tarjeta-entidad {
+    background: var(--blanco);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+
+    /* --- NUEVOS AJUSTES --- */
+    max-width: 450px;      /* Limita el ancho máximo (ajusta el número a tu gusto) */
+    width: 100%;           /* Permite que sea responsivo en móviles */
+
+    /* --- ESTOS SON LOS AJUSTES CLAVE --- */
+    flex: 0 1 400px;     /* No crece, puede encogerse si no hay espacio, base de 400px */
+    max-width: 450px;    /* Nunca medirá más de esto */
+    min-width: 320px;    /* Nunca medirá menos de esto (evita que se vea muy delgada) */
+    box-sizing: border-box;
+}
+
+.etiqueta {
+    background-color: #e2e8f0;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.avatar.amarillo { background-color: #f1c40f; }
+.avatar.azul { background-color: #3498db; }
+.avatar.naranja { background-color: #e67e22; }
+.avatar.rojo { background-color: #e74c3c; }
+.avatar.gris { background-color: #bdc3c7; }
+
+.etiqueta {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.est-pequeno { background: #fef9c3; color: #854d0e; }
+.est-mayor { background: #dbeafe; color: #1e40af; }
+.profesor { background: #dcfce7; color: #166534; }
+.admin { background: #e0f2fe; color: #0369a1; }
+
+.acciones-rapidas {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-accion {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.btn-accion:hover { background: var(--gris-frio); }
+
+/* =========================================
+   5. VISTA DE PRÉSTAMOS
+   ========================================= */
+.contenedor-prestamos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tarjeta-prestamo {
+    background: var(--blanco);
+    border-radius: 12px;
+    border: 1px solid var(--borde);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.tarjeta-prestamo.retrasado { border-color: #fecaca; }
+
+.contenido-principal {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.contenido-desplegable {
+    display: flex;            /* Activamos el modo flexible */
+    flex-wrap: wrap;          /* Permitimos que las tarjetas salten de línea */
+    gap: 20px;               /* Espacio entre tarjetas */
+    padding: 20px;
+    justify-content: flex-start; /* Alinea las tarjetas a la izquierda */
+}
+
+.desplegable-grupo {
+    background: var(--blanco);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    max-width: 1200px; /* Ancho máximo de la sección entera */
+    margin: 0 auto 20px auto; /* Centra el grupo y da espacio abajo */
+}
+
+.desplegable-grupo summary {
+    padding: 15px 25px;
+    background: #f8fafc; /* Gris muy clarito */
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--borde);
+    list-style: none; /* Quita la flecha por defecto en algunos navegadores */
+}
+
+.contador-badge {
+    background: var(--primario);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.portada-prestamo {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.detalles-prestamo h3 { margin: 0 0 5px 0; font-size: 1.1rem; }
+.detalles-prestamo p { margin: 3px 0; font-size: 0.9rem; color: var(--texto-suave); }
+.fecha-devolucion { color: #dc2626 !important; font-weight: bold; }
+
+.banner-alerta {
+    background-color: #fff1f2;
+    padding: 10px 20px;
+    border-top: 1px solid #fecaca;
+    color: #e11d48;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   6. VISTA DE ESTADÍSTICAS
+   ========================================= */
+
+
+.puesto {
+    width: 30px;
+    height: 30px;
+    background: #f3e8ff;
+    color: #7e22ce;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+
+/* Posicionamiento del botón volver fuera del contenedor */
+.boton-flotante-derecha {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.btn-volver {
+    padding: 10px 20px;
+    background-color: #1a4b8c; /* Gris neutro */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    font-family: sans-serif;
+}
+
+.btn-volver:hover {
+    background-color: #5a6268;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+    .boton-flotante-derecha {
+        position: relative;
+        top: 0;
+        right: 0;
+        text-align: right;
+        padding: 10px;
+    }
+}
